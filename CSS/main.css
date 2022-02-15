@@ -1,0 +1,165 @@
+.main {
+    width: 1440px;
+    height: 100vh;
+    background-color: hsl(257, 40%, 49%);
+    background-image: url(../images/bg-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: 200px 1fr 105px;
+    grid-template-areas: ". logo logo logo . . . . . . . . . . . . . ."
+    ". vector vector vector vector vector vector vector vector vector details details details details details details details ."
+    ". . . . . . . . . . . . . . . social social .";
+}
+
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2)
+{
+    .main {
+        width: 375px;
+    }
+    .container {
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: calc(100% / 6) auto auto calc(100% / 6);
+        grid-template-areas: ". logo logo logo . . . . ."
+        ". vector vector vector vector vector vector vector ."
+        ". details details details details details details details ."
+        ". . . social social social . . .";
+        text-align: center;
+    }
+}
+
+.logo {
+    grid-area: logo;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: left
+}
+
+.vector {
+    grid-area: vector;
+    background-image: url(../images/illustration-mockups.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+    .vector { 
+      background-image: none;
+
+    }
+    .vector > img {
+        max-width: 100%;
+    }
+}
+
+.details {
+    grid-area: details;
+    display: flex;
+    flex-direction: column;
+    margin-left: 35px;
+}
+
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+    .details {
+        margin: inherit;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+h1 {
+    font-weight: 600;
+    margin-right: 85px;
+}
+
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+    h1 {
+        margin: inherit;
+        font-size: 25px;
+    }
+}
+
+p {
+    font-weight: 400;
+    opacity: 80%;
+    font-size: 17px;
+}
+
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+    p {
+        font-size: 14px;
+    }
+}
+
+button {
+    width: 35%;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+@media (max-width: 500px) {
+    button {
+        width: calc((100%/9)*7);
+        padding: 10px;
+        font-size: inherit;
+    }
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: hsl(300, 69%, 71%);
+}
+
+span {
+    color: hsl(257, 40%, 49%);
+}
+
+.social {
+    grid-area: social;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social img {
+    width: 50%;
+    height: 50%;
+}
+
+.social:hover {
+    cursor: pointer;
+}
+
+.social .instagram-icon {
+    width: 50%;
+    height: 50%;
+    padding:5px;
+    border: 2px solid black;
+    border-radius: 50%;
+    opacity: 70%;
+}
